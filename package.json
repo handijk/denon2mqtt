@@ -1,0 +1,67 @@
+{
+  "name": "denon2mqtt",
+  "version": "0.1.0",
+  "description": "Interface between Denon and Marantz AV receivers (the telnet protocol on port 23) and MQTT",
+  "type": "module",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "denon2mqtt": "index.js"
+  },
+  "files": [
+    "index.js",
+    "config.js",
+    "lib/"
+  ],
+  "engines": {
+    "node": "^20.19 || ^22.12 || >=24"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write . && eslint --fix .",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/handijk/denon2mqtt.git"
+  },
+  "keywords": [
+    "mqtt",
+    "smarthome",
+    "mqtt-smarthome",
+    "mqtt-interfaces",
+    "home-automation",
+    "home-assistant",
+    "denon",
+    "marantz",
+    "avr",
+    "receiver",
+    "telnet"
+  ],
+  "author": "Han Dijk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/handijk/denon2mqtt/issues"
+  },
+  "homepage": "https://github.com/handijk/denon2mqtt",
+  "mqttInterfaces": {
+    "spec": "2.0",
+    "envPrefix": "DENON2MQTT",
+    "needs": [
+      "network"
+    ],
+    "serviceExtra": []
+  },
+  "dependencies": {
+    "mqtt-interfaces-core": "^0.8.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.0.0"
+  }
+}
